@@ -15,6 +15,6 @@ class MainProgram:
             adoclient.ADOClient.query_ado_events()
             time.sleep(float(frequency))
 
-
+ 
 if __name__ == '__main__':
     MainProgram.main()
