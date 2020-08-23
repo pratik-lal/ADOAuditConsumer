@@ -7,8 +7,11 @@ import time
 class MainProgram:
     @staticmethod
     def main():
-        config = configparser.ConfigParser()
-        config.read(".//adoaudit.config")
+        config = configparser.ConfigParser() # Initialize configparser
+        config.read(".//adoaudit.config") # Read configuration file
+
+        # Set execution frequency (in seconds) of application.
+        # Update execution frequency in configuration file.
         frequency = config.get("ADO_options", "execution_frequency")
         while True:
             logger.AppLogging.auditlogger.info("Application execution frequency (in seconds): " + str(frequency))

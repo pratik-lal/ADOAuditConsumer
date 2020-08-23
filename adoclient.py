@@ -12,13 +12,13 @@ class ADOClient:
     # initializing configparser
     config = configparser.ConfigParser()
     try:
-        config.read(".\\adoaudit.config") # read configuration file.
+        config.read(".\\adoaudit.config") # Read configuration file.
         logger.AppLogging.auditlogger.info("Reading configuration file adoaudit.config")
-        personal_access_token = config.get("ADO_options", "personal_access_token") # reading PAT value mentioned in configuration file. This is mandatory field.
-        organization_url = config.get("ADO_options", "organization_url") # reading audit service organization URL mentioned in configuration file. This is mandatory field.
+        personal_access_token = config.get("ADO_options", "personal_access_token") # Reading PAT value mentioned in configuration file. This is mandatory field.
+        organization_url = config.get("ADO_options", "organization_url") # Reading audit service organization URL mentioned in configuration file. This is mandatory field.
         logger.AppLogging.auditlogger.info("Successfully retrieved PAT & Organization URL " + organization_url)
     
-    # catching the exception if configuration file is not updated.
+    # Catching the exception if configuration file is not updated.
     except configparser.NoOptionError as ex:
         logger.AppLogging.auditlogger.error("Unable to retrieve configuration from adoaudit.config")
         logger.AppLogging.auditlogger.error(str(ex))
@@ -63,12 +63,15 @@ class ADOClient:
 
         update_last_processed_time = datetime.utcnow().astimezone().isoformat()
         try:
+            # Update last-processed_time file with latest execution time.
             with open(".//last_processed_time", 'w') as filetowrite:
                 filetowrite.write(update_last_processed_time)
                 filetowrite.close()
                 logger.AppLogging.auditlogger.info("Successfully updated new last_processed_time: "
                                                    + str(update_last_processed_time))
                 for items in [get_audit_response.decorated_audit_log_entries]:
+                    # Write the output file to tmp directory.
+                    # tmp directory is used to work on file output. 
                     f = open(".//tmp//adoaudit_output"+time.strftime("%Y%m%d-%H%M%S")+".log", "w")
                     for item in range(len(items)):
                         out = items[item]
@@ -77,12 +80,15 @@ class ADOClient:
         except RuntimeError as ex:
             logger.AppLogging.auditlogger.error(str(ex))
         try:
+            # If file output, saved file is of no size, delete the file from tmp directory.
+            # Else, move the file to output directory. 
             if os.stat(f.name).st_size == 0:
                 f.close()
                 os.remove(f.name)
                 logger.AppLogging.auditlogger.info("No audit event was found in previous execution")
             else:
                 f.close()
+                # Move the output file to output directory and print filename in log file for tracking.
                 shutil.move(f.name, ".//output")
                 logger.AppLogging.auditlogger.info("Audit events were found in previous execution")
                 logger.AppLogging.auditlogger.info("New output file created in output directory " + str(f.name))
