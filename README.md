@@ -7,7 +7,7 @@ An application to consume audit events from Azure DevOps audit service.
 
 ## Pre-requisites
 - It is recommended to set the host's timezone in UTC.
-- Read-only PAT (personal access token) from Azure DevOps instance to query audit events.
+- PAT (personal access token) with read-only privilege from Azure DevOps instance to query audit events.
 - [Microsoft DOCS - How to create PAT](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page)
 
 ## Install Azure DevOps Audit Events Consumer (ADOAuditConsumer)
