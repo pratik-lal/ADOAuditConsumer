@@ -2,12 +2,12 @@
 An application to consume audit events from Azure DevOps audit service.
 
 ## Application Components
-- adoauditconsumer.exe: main application
-- adoaudit.config: ADOAuditConsumer configuration file. This is place to configure the application.
-- last_processed_time: file that tracks last query time to Azure DevOps audit service.
-- output: Directory wherein, output files containing audit events will be saved here.
-- logs: Directory contains application logs (INFO, WARN, ERROR). Max log filesize is 1 MB and 10 log files would be kept as backup. Refer [logger.py](https://github.com/pratik-lal/ADOAuditConsumer/blob/master/logger.py).
-- tmp: Directory to analyze output received from  Azure DevOps audit service.
+- **adoauditconsumer.exe**: main application
+- **adoaudit.config**: ADOAuditConsumer configuration file. This is place to configure the application.
+- **last_processed_time**: file that tracks last query time to Azure DevOps audit service.
+- **output**: Directory wherein, output files containing audit events will be saved here.
+- **logs**: Directory contains application logs (INFO, WARN, ERROR). Max log filesize is 1 MB and 10 log files would be kept as backup. Refer [logger.py](https://github.com/pratik-lal/ADOAuditConsumer/blob/master/logger.py).
+- **tmp**: Directory to analyze output received from  Azure DevOps audit service.
 
 ## Application: ADOAuditConsumer Use cases
 - Security Monitoring & Analytics
