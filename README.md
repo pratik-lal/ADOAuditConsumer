@@ -15,4 +15,4 @@ An application to consume audit events from Azure DevOps audit service.
 - Configuation file: adoaudit.config required three parameters
   - organization_url - e.g. https://auditservice.dev.azure.com/enter_you_org_name
   - personal_access_token
-  - execution_frequency - Frequency (schedule) (in seconds) to query Azure DevOps instance. Change the frequency as oer your need. Default is 600 seconds (10 minutes)
+  - execution_frequency - Frequency (schedule) (in seconds) to query Azure DevOps instance. Change the frequency as per your need. Default is 600 seconds (10 minutes)
