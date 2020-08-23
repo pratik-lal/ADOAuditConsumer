@@ -13,6 +13,6 @@ An application to consume audit events from Azure DevOps audit service.
 ## Install Azure DevOps Audit Events Consumer (ADOAuditConsumer)
 - Download ADOAuditConsumer release
 - Configuation file: adoaudit.config required three parameters
-  1. organization_url - e.g. https://auditservice.dev.azure.com/enter_you_org_name
-  2. personal_access_token -  some random hexadeciman characters
-  3. execution_frequency - Frequency (schedule) (in seconds) to query Azure DevOps instance. Change the frequency as oer your need. Default is 600 seconds (10 minutes)
+  - organization_url - e.g. https://auditservice.dev.azure.com/enter_you_org_name
+  - personal_access_token
+  - execution_frequency - Frequency (schedule) (in seconds) to query Azure DevOps instance. Change the frequency as oer your need. Default is 600 seconds (10 minutes)
