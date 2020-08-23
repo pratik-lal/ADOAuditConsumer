@@ -19,7 +19,7 @@ An application to consume audit events from Azure DevOps audit service.
 - [Microsoft Docs - How to create PAT](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=preview-page)
 
 ## Install Azure DevOps Audit Events Consumer (ADOAuditConsumer)
-- Download ADOAuditConsumer release
+- [Download ADOAuditConsumer release](https://github.com/pratik-lal/ADOAuditConsumer/releases/download/v1.0beta/ADOAuditConsumer.zip)
 - Configuation file: adoaudit.config required three parameters
   - **organization_url** - e.g. https://auditservice.dev.azure.com/enter_you_org_name
   - **personal_access_token**
@@ -32,4 +32,9 @@ An application to consume audit events from Azure DevOps audit service.
   - In NSSM gui window, navigate to ADOAuditConsumer\adoauditconsumer.exe
   - Click Install service
   - Open Windows Service (services.msc) and start ADOAuditConsumer service
+
+## Download
+- [ADOAuditConsumer v1.0beta - Windows Executable](https://github.com/pratik-lal/ADOAuditConsumer/releases)
+- File: ADOAuditConsumer.zip
+
   
