@@ -1,5 +1,5 @@
 # Azure DevOps Audit Events Consumer (ADOAuditConsumer)
-An application to consume audit events from Azure DevOps audit service.
+An application to query/download audit events from Azure DevOps audit service.
 
 ## Application Components
 - **adoauditconsumer.exe**: main application
