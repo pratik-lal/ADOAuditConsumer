@@ -9,7 +9,7 @@ An application to query/download audit events from Azure DevOps audit service
 - **logs**: Directory contains application logs (INFO, WARN, ERROR). Max log filesize is 1 MB and 10 log files would be kept as backup. Refer [logger.py](https://github.com/pratik-lal/ADOAuditConsumer/blob/master/logger.py)
 - **tmp**: Directory to analyze output received from  Azure DevOps audit service
 
-## Application: ADOAuditConsumer Use cases
+## Application: ADOAuditConsumer Use Cases
 - Security Monitoring & Analytics
 - Collect Audit events for compliance
 
